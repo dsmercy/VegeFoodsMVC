@@ -9,7 +9,8 @@ using System.Web;
 namespace VegeFoods.Repository
 {
     // This is used to Isolate the EntityFramework based Data Access Layer from the MVC Controller class
-   
+    // This is used to Isolate the EntityFramework based Data Access Layer from the MVC Controller class
+
     public class GenericRepository<Tbl_Entity> : IRepository<Tbl_Entity> where Tbl_Entity : class
     {
         DbSet<Tbl_Entity> _dbSet;
