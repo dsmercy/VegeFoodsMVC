@@ -85,6 +85,7 @@ namespace VegeFoods.Models
         public string Description { get; set; }
         public string ProductImage { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public Nullable<decimal> PriceSale { get; set; }
         public Nullable<bool> IsFeatured { get; set; }
 
         public virtual ICollection<Cart> Cart { get; set; }
