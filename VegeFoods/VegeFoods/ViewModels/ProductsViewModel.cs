@@ -9,13 +9,14 @@ namespace VegeFoods.ViewModels
 {
     public class CategoryDetail
     {
+        [Key]
         public int CategoryId { get; set; }
         [Required(ErrorMessage = "Category name is required")]
         [StringLength(100, ErrorMessage = "Minimum 3 and Minimum 5 and Maximum 100 characters are allowed", MinimumLength = 3)]
         [System.Web.Mvc.Remote("CheckCategoryExist", "Admin", ErrorMessage = "Category already exist")]
         public string CategoryName { get; set; }
-        public Nullable<bool> IsActive { get; set; }
-        public Nullable<bool> IsDelete { get; set; }
+        public Nullable<bool> IsActive { get; set; } = true;
+        public Nullable<bool> IsDelete { get; set; } = false;
     }
 
     public class ProductDetail

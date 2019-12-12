@@ -53,7 +53,6 @@ namespace VegeFoods.Controllers
         {
             CategoryDetail cd;
             if (categoryId != 0)
-                cd =
                 cd = JsonConvert.DeserializeObject<CategoryDetail>(JsonConvert.SerializeObject(_unitOfWork.GetRepositoryInstance<VegeFoods.Models.Category>().GetFirstOrDefault(categoryId)));
             else
                 cd = new CategoryDetail();
@@ -66,7 +65,6 @@ namespace VegeFoods.Controllers
         /// <param name="cd"></param>
         /// <returns></returns>
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult UpdateCategory(CategoryDetail cd)
         {
             if (ModelState.IsValid)

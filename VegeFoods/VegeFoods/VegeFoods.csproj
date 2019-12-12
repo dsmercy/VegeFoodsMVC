@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201912090559391_initial.Designer.cs">
       <DependentUpon>201912090559391_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912120545127_update1.cs" />
+    <Compile Include="Migrations\201912120545127_update1.Designer.cs">
+      <DependentUpon>201912120545127_update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ErrorViewModel.cs" />
     <Compile Include="Models\VegeFoodsDTO.cs" />
@@ -622,12 +626,14 @@
     <Content Include="Views\_ViewImports.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Manage\Dashboard.cshtml" />
+    <Content Include="Views\Manage\Categories.cshtml" />
+    <Content Include="Views\Manage\UpdateCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\classes\" />
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\includes\" />
-    <Folder Include="Views\Manage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -642,6 +648,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912090559391_initial.resx">
       <DependentUpon>201912090559391_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912120545127_update1.resx">
+      <DependentUpon>201912120545127_update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
