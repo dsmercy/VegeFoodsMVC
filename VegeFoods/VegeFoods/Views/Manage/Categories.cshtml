@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <div class="rightpart">
     <div class="sechBx clearfix">
         <div class="bretcrum">Dashboard</div>
@@ -32,10 +33,10 @@
                             <tr>
                                 <td>@(Model.IndexOf(item) + 1)</td>
 
-                                <td><a style="cursor: pointer; color: #4a83d4; text-decoration: underline;" title="Click to see its products" href="/admin/products?cId=@item.CategoryId">@item.CategoryName</a></td>
+                                <td><a style="cursor: pointer; color: #4a83d4; text-decoration: underline;" title="Click to see its products" href="/Manage/products?cId=@item.CategoryId">@item.CategoryName</a></td>
 
                                 <td>
-                                    @Html.ActionLink("Edit", "UpdateCategory", "Admin", new { categoryId = item.CategoryId }, new { @class = "editBtn" })
+                                    @Html.ActionLink("Edit", "UpdateCategory", "Manage", new { categoryId = item.CategoryId }, new { @class = "editBtn" })
                                     <a href="javascript:void(0)" onclick="deletedata (@item.CategoryId)" class="delBtn">Delete</a>
                                 </td>
                             </tr>
@@ -69,7 +70,7 @@
     });
 
     function deletedata(x) {
-        SweetAlertDeleteConfirmation('warning', '', 'Are you sure, you want to delete this category?', '', 'Category deleted successfully.', '', 'Category is not deleted', '/Admin/DeleteCategory', x);
+        SweetAlertDeleteConfirmation('warning', '', 'Are you sure, you want to delete this category?', '', 'Category deleted successfully.', '', 'Category is not deleted', '/Manage/DeleteCategory', x);
     }
     </script>
 }

@@ -145,6 +145,7 @@ function OnlyLegalCharacters(e, t) {
 
 // Check illegal characters on submit and prevent form posting
 function CheckValidInput(submitElement) {
+    debugger;
     var IsValidData = true;
     $(submitElement).prop("disabled", true);
     $(submitElement).css("cursor", "default");

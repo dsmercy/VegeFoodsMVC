@@ -28,7 +28,7 @@ namespace VegeFoods.Controllers
         /// Categories
         /// </summary>
         /// <returns></returns>
-        #region Manage Categories ...
+          #region Manage Categories ...
         public ActionResult Categories()
         {
             List<VegeFoods.Models.Category> AllCategories = _unitOfWork.GetRepositoryInstance<VegeFoods.Models.Category>().GetAllRecordsIQueryable().Where(i => i.IsDelete == false).ToList();
@@ -53,6 +53,7 @@ namespace VegeFoods.Controllers
         {
             CategoryDetail cd;
             if (categoryId != 0)
+                cd =
                 cd = JsonConvert.DeserializeObject<CategoryDetail>(JsonConvert.SerializeObject(_unitOfWork.GetRepositoryInstance<VegeFoods.Models.Category>().GetFirstOrDefault(categoryId)));
             else
                 cd = new CategoryDetail();
@@ -65,6 +66,7 @@ namespace VegeFoods.Controllers
         /// <param name="cd"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult UpdateCategory(CategoryDetail cd)
         {
             if (ModelState.IsValid)

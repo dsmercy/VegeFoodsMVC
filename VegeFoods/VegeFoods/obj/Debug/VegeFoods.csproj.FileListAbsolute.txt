@@ -117,3 +117,4 @@ C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.pdb
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.initial.resources
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.csproj.GenerateResource.Cache
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.update1.resources
+C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.update2.resources
