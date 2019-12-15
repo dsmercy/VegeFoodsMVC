@@ -25,6 +25,5 @@ public class VegeFoodsContext : DbContext
     public DbSet<VegeFoods.Models.Product> Product { get; set; }
     public DbSet<VegeFoods.Models.Roles> Roles { get; set; }
     public DbSet<VegeFoods.Models.ShippingDetails> ShippingDetails { get; set; }
-
-    public System.Data.Entity.DbSet<VegeFoods.ViewModels.CategoryDetail> CategoryDetails { get; set; }
+    
 }

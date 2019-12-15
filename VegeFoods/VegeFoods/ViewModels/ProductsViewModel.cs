@@ -21,6 +21,7 @@ namespace VegeFoods.ViewModels
 
     public class ProductDetail
     {
+        [Key]
         public int ProductId { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Minimum 3 and Minimum 5 and Maximum 100 characters are allowed", MinimumLength = 3)]

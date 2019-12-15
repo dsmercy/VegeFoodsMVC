@@ -111,10 +111,10 @@ C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\bin\System.Web.WebPages.Deploym
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\bin\System.Web.WebPages.Razor.xml
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\bin\Antlr3.Runtime.pdb
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\bin\Newtonsoft.Json.xml
-C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.csprojResolveAssemblyReference.cache
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.dll
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.pdb
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.initial.resources
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.csproj.GenerateResource.Cache
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.update1.resources
 C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.update2.resources
+C:\Users\Server\Desktop\Daya\VegeFoods\VegeFoods\obj\Debug\VegeFoods.Migrations.update3.resources
