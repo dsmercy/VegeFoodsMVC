@@ -41,7 +41,7 @@ namespace VegeFoods.Controllers
         /// <returns></returns>
         public ActionResult AddCategory()
         {
-            return UpdateCategory(0);
+            return UpdateCategory1(0);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace VegeFoods.Controllers
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-        public ActionResult UpdateCategory(int categoryId)
+        public ActionResult UpdateCategory1(int categoryId)
         {
             CategoryDetail cd;
             if (categoryId != 0)

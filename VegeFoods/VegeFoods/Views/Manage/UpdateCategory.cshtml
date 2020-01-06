@@ -9,9 +9,9 @@
         <div class="bretcrum"><a href="#">Dashboard</a>&nbsp; » <span>Form</span></div>
     </div>
     <div class="dashBx">
-        @using (Html.BeginForm("UpdateCategory", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @*@using (Html.BeginForm("UpdateCategory", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken()*@
             <div class="dashboardHD">
                 @(Request.Url.ToString().ToLower().Contains("addcategory") ? "Add Category" : "Update Category")
             </div>
@@ -19,16 +19,46 @@
                 @Html.HiddenFor(m => m.CategoryId)
                 <div class="dashfrm-L">
                     <label class="lblTxt">Category Name*</label>
-                    @Html.TextBoxFor(m => m.CategoryName, new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();" })
+                    @Html.TextBoxFor(m => m.CategoryName, new { @class = "dashInp", @onkeypress = "return OnlyLegalCharacters();",@id="txtcategory" })
                     @Html.ValidationMessageFor(m => m.CategoryName)
                 </div>
                 <div class="clearfix"></div>
                 <div class="dashfrm-L submitBtns">
                     <a onclick="window.history.back();" class="editBtn cancelBtn" style="width: 48%;">Cancel</a>
-                    <input type="submit" value="Submit" onclick="return CheckValidInput(this);" class="editBtn" style="width: 48%;" />
+                    <input type="submit" id="btnSubmit" value="Submit" onclick="return CheckValidInput(this);" class="editBtn" style="width: 48%;" />
 
                 </div>
             </div>
-        }
+        @*}*@
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            debugger;
+           var CategoryDetail = [
+        { CategoryName: "Vegetable" }
+    ];      
+
+    CategoryDetail = JSON.stringify({ 'CategoryDetail': CategoryDetail });
+
+
+      //  var AirlineName = $("#txtcategory").val();
+        
+        $.ajax({
+            url:'/Manage/UpdateCategory',
+            type: 'post',
+            data: CategoryDetail,
+            success: function (data) {
+                if (data != "Error") {
+                    alert("Data Added Successfully......!");
+                }location.reload();
+            },
+            error: function (data) {
+                alert("Something Wrong......!");
+            },
+        })
+    })
+
+    })
+</script>
