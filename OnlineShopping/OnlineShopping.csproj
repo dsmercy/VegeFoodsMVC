@@ -329,6 +329,26 @@
     <Content Include="Images\team7.png" />
     <Content Include="Images\team8.png" />
     <Content Include="Images\toggleIcon.png" />
+    <Content Include="ProductImage\143dde0f-86e6-44a3-bca2-51550f87498fstrawberry.jpg" />
+    <Content Include="ProductImage\35392e1a-e403-46c8-b533-cdaf60805be9pomegranate.jpg" />
+    <Content Include="ProductImage\3be7e47c-e2f1-46fb-acb1-59de312190baladies-finger.jpg" />
+    <Content Include="ProductImage\3d971914-4c62-405e-b122-d225dcfb9847grapes-bangalore-blue.jpg" />
+    <Content Include="ProductImage\40980bc4-f8fd-494b-a7e6-9b7e7250114dapple.jpg" />
+    <Content Include="ProductImage\4cfd46da-83d7-446a-819b-bc6f69dea5ddbanana-raw.jpg" />
+    <Content Include="ProductImage\5f58394b-e3c3-43c2-a5dc-d2299c1000b8palak.jpg" />
+    <Content Include="ProductImage\644d730f-ac65-459c-8baf-7c97471f1adctomato.jpg" />
+    <Content Include="ProductImage\7b585187-9f8d-420b-9c62-22dab0489616pineapple.jpg" />
+    <Content Include="ProductImage\7df6281a-3e40-484d-a143-8f1a1bd25cdcginger.jpg" />
+    <Content Include="ProductImage\877b3992-e08c-4f35-8bbd-952735f103c8potato.jpg" />
+    <Content Include="ProductImage\a0eb7c55-643a-406c-b55c-bbf4de11c3fesapota.jpg" />
+    <Content Include="ProductImage\a4fe62a3-ec57-4812-b846-01cff3e76d54chilli-green.jpg" />
+    <Content Include="ProductImage\a90581b4-bd51-43e3-b884-ad2b6866c1e1papaya.jpg" />
+    <Content Include="ProductImage\aeef5a0c-8f0a-4faf-bd2d-5b70eca036f4onion.jpg" />
+    <Content Include="ProductImage\c2367198-038b-4338-850d-a4ed8afead4bcarrot.jpg" />
+    <Content Include="ProductImage\d3cfde33-57c4-4fb4-af89-9b57771e69dawatermelon.jpg" />
+    <Content Include="ProductImage\d52e7100-e958-47ca-b982-3a8de5e82dbbcucumber.jpg" />
+    <Content Include="ProductImage\d5dcf6d1-9741-41be-be34-c24a8aebce7abanana.jpg" />
+    <Content Include="ProductImage\feba2ab3-bd22-4a44-809f-5541369a91a7sweet-lime.jpg" />
     <Content Include="Scripts\Add_Update_Member.js" />
     <Content Include="Scripts\admin_function.js" />
     <Content Include="Scripts\aos.js" />
@@ -744,7 +764,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ProductImage\" />
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\classes\" />
     <Folder Include="Scripts\tiny_mce\plugins\spellchecker\includes\" />
   </ItemGroup>
