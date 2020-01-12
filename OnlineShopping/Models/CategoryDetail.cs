@@ -38,15 +38,16 @@ namespace OnlineShopping.Models
         [Required]
         [DataType(DataType.Currency)]
         [Range(typeof(decimal), "1", "200000", ErrorMessage = "Invalid price")]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         [Required]
         [DataType(DataType.Currency)]
         [Range(typeof(decimal), "1", "200000", ErrorMessage = "Invalid price")]
-        public decimal PriceSale { get; set; }
+        public decimal? PriceSale { get; set; }
 
-        public bool IsFeatured { get; set; }
+        public bool IsFeatured { get; set; } 
 
+        public List<Tbl_Product> RelatedProducts { get; set; }
         public SelectList Categories { get; set; }
     }
 }

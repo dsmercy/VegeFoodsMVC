@@ -144,13 +144,13 @@
                 {
                     <div class="col-md-6 col-lg-2 ftco-animate">
                         <div class="product">
-                            <a href="/admin/ProductDetail?productId=@item.ProductId" class="img-prod">
+                            <a href="/Home/ProductSingle?productId=@item.ProductId" class="img-prod">
                                 <img class="img-fluid" src="@Url.Content("/ProductImage/"+item.ProductImage)" alt="Image">
                                 @*<span class="status">30%</span>*@
                                 <div class="overlay"></div>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">
-                                <h3><a href="/admin/ProductDetail?productId=@item.ProductId">@item.ProductName</a></h3>
+                                <h3><a href="/Home/ProductSingle?productId=@item.ProductId">@item.ProductName</a></h3>
                                 <div class="d-flex">
                                     <div class="pricing">
                                         <p class="price"><span class="mr-2 price-dc">@item.Price</span><span class="price-sale">@item.PriceSale</span></p>

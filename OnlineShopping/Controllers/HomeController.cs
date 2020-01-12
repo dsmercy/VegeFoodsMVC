@@ -1,4 +1,6 @@
-﻿using OnlineShopping.Repository;
+﻿using Newtonsoft.Json;
+using OnlineShopping.Models;
+using OnlineShopping.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,10 +35,27 @@ namespace OnlineShopping.Controllers
         {
             return View();
         }
-
-        public ActionResult ProductSingle()
+        
+        public ActionResult ProductSingle(int productId)
         {
-            return View();
+
+            Tbl_Product pd = _unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId);
+            ProductDetail product = new ProductDetail();
+            product.CategoryId = pd.CategoryId;
+            product.CreatedDate = pd.CreatedDate;
+            product.Description = pd.Description;
+            //product.IsActive = pd.IsActive;
+            ////product.IsDelete = pd.IsDelete;
+            //product.IsFeatured = pd.IsFeatured;
+            product.ModifiedDate = pd.ModifiedDate;
+            product.Price = pd.Price;
+            product.PriceSale = pd.PriceSale;
+            product.ProductId = pd.ProductId;
+            product.ProductImage = pd.ProductImage;
+            product.ProductName = pd.ProductName;
+            product.RelatedProducts= _unitOfWork.GetRepositoryInstance<Tbl_Product>().GetAllRecordsIQueryable().Where(i => i.CategoryId == pd.CategoryId).ToList();
+            //_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId);
+            return View(product);
         }
 
         public ActionResult Checkout()

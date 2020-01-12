@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
+using OnlineShopping.Models;
 
 namespace OnlineShopping.Repository
 {
@@ -19,6 +20,7 @@ namespace OnlineShopping.Repository
         void Remove(Tbl_Entity entity);
         void RemoveByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict);
         void RemoveRangeByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict);
+        Tbl_Product GetFirstOrDefault(object productId);
         int InactiveAndDeleteMarkByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict, Action<Tbl_Entity> ForEachPredict);
         Tbl_Entity GetFirstOrDefaultByParameter(Expression<Func<Tbl_Entity, bool>> wherePredict);
         IEnumerable<Tbl_Entity> GetListByParameter(Expression<Func<Tbl_Entity, bool>> wherePredict);

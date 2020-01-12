@@ -43,7 +43,7 @@
             <tr>
                 <td colspan="2">@if (Model.ProductImage != null && Model.ProductImage != "")
                                 {
-                    <img src="@(Path.Combine(System.Configuration.ConfigurationManager.AppSettings["ProductImage"], "Large/", Model.ProductId + "_" + Model.ProductImage))" alt="" id="ImgProfServiceBanner" />
+                    <img src="@Url.Content("/ProductImage/"+Model.ProductImage)" alt="" id="ImgProfServiceBanner" />
                                 }
                                 else
                                 {
