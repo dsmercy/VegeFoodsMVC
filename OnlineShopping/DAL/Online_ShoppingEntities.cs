@@ -25,4 +25,6 @@ public class Online_ShoppingEntities : DbContext
     public virtual DbSet<Tbl_Product> Tbl_Product { get; set; }
     public virtual DbSet<Tbl_Roles> Tbl_Roles { get; set; }
     public virtual DbSet<Tbl_ShippingDetails> Tbl_ShippingDetails { get; set; }
+
+    
 }

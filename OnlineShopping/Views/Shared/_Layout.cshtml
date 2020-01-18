@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="~/css/animate.css">
-
+    <link href="~/css/sweetalert.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
@@ -54,10 +54,20 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">Hello @User.Identity.Name</li>
+                        <li class="nav-item"><a class="nav-link" href="/account/logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" href="/account/register">Login/Sign Up</a></li>
+                    }
                     <li class="nav-item active"><a href="@Url.Action("index", "Home")" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
+
                             <a class="dropdown-item" href="@Url.Action("Shop", "Home")">Shop</a>
                             <a class="dropdown-item" href="@Url.Action( "WishList", "Home")">Wishlist</a>
                             <a class="dropdown-item" href="@Url.Action( "ProductSingle", "Home")">Single Product</a>
@@ -199,6 +209,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="~/Scripts/google-map.js"></script>
     <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/sweetalert.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

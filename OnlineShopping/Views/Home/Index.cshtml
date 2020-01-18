@@ -172,11 +172,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 }
                 else
                 {
-                   <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="#" class="img-prod">
                                 <img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
@@ -341,3 +341,9 @@
     </div>
 </section>
 
+@section Scripts{
+    <script>
+      window.onload = function () {     
+                          if('@TempData["VerificationLinlMsg"]'!='')             {
+     swal('@TempData["VerificationLinlMsg"]', '', 'success');
+     }         }     </script> }  
