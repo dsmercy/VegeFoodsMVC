@@ -9,13 +9,14 @@ using System.Web.Mvc;
 
 namespace OnlineShopping.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 
         private GenericUnitOfWork _unitOfWork = new GenericUnitOfWork();
 
 
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             List<OnlineShopping.Models.Tbl_Product> products = _unitOfWork.GetRepositoryInstance<OnlineShopping.Models.Tbl_Product>().GetAllRecordsIQueryable().Where(i => i.IsDelete == false).ToList();

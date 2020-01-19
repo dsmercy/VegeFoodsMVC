@@ -26,11 +26,10 @@ namespace OnlineShopping.Controllers
                 var user = _unitOfWork.GetRepositoryInstance<Tbl_Members>().GetFirstOrDefaultByParameter(i => i.EmailId == model.UserEmailId && i.Password == EncryptedPassword && i.IsDelete == false);
                 if (user != null && user.IsActive == true)
                 {
-                    Session["MemberId"] = user.MemberId;
-                    Response.Cookies["MemberName"].Value = user.FirstName;
                     var roles = _unitOfWork.GetRepositoryInstance<Tbl_MemberRole>().GetFirstOrDefaultByParameter(i => i.MemberId == user.MemberId);
                     if (roles != null && roles.RoleId != 1)
                     {
+                        FormsAuthentication.SetAuthCookie(user.FirstName,true);
                         Response.Cookies["MemberRole"].Value = _unitOfWork.GetRepositoryInstance<Tbl_Roles>().GetFirstOrDefaultByParameter(i => i.RoleId == roles.RoleId).RoleName;
                     }
                     else
@@ -38,6 +37,7 @@ namespace OnlineShopping.Controllers
                         ModelState.AddModelError("Password", "Invalid username or password");
                         return View(model);
                     }
+                    ViewBag.redirectUrl = (!string.IsNullOrEmpty(returnUrl) ? HttpUtility.HtmlDecode(returnUrl) : "/");
                 }
                 else
                 {
@@ -76,15 +76,15 @@ namespace OnlineShopping.Controllers
                 mem.Password = EncryptDecrypt.Encrypt(model.Password, true);
                 mem.IsActive = true;
                 mem.IsDelete = false;
-                //_unitOfWork.GetRepositoryInstance<Tbl_Members>().Add(mem);
+                _unitOfWork.GetRepositoryInstance<Tbl_Members>().Add(mem);
                 // Adding Member Role                 
                 Tbl_MemberRole mem_Role = new Tbl_MemberRole();
                 mem_Role.MemberId = mem.MemberId;
                 mem_Role.RoleId = 2;
-                //_unitOfWork.GetRepositoryInstance<Tbl_MemberRole>().Add(mem_Role);
+                _unitOfWork.GetRepositoryInstance<Tbl_MemberRole>().Add(mem_Role);
 
                 TempData["VerificationLinlMsg"] = "You are registered successfully.";
-                FormsAuthentication.SetAuthCookie(mem.FirstName,true);
+                FormsAuthentication.SetAuthCookie(mem.FirstName, true);
                 return RedirectToAction("Index", "Home");
             }
             return View("Register", model);

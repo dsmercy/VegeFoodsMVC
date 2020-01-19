@@ -1,0 +1,65 @@
+﻿@using OnlineShopping.Utility
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta charset="UTF-8">
+    <!--css-->
+    <link rel="stylesheet" href="~/css/stylesheet.css" media="all">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link href="~/css/CustomStyleSheet.css" rel="stylesheet" />
+    <link href="~/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/css/bootstrap_4.2.1.min.css" rel="stylesheet" />
+    @RenderSection("css", false)
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <!--css-->
+    <title> @ViewBag.MetaTitle </title>
+</head>
+
+<body>
+    <!--Start main Container-->
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="../Home/index">Home</a>
+            <a href="javascript:void(0)" class="navbar-brand loginpopup">Login</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    @*<li class="nav-item"><a href="javascript:void(0)" class="nav-link loginpopup">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/account/register">Sign Up</a></li>*@
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!--End Header-->
+    @RenderBody()
+    <!--Login Popup/Modal-->
+    <div class="backBg" id="loginpopup">
+        @{Html.RenderPartial("_Login", new OnlineShopping.Models.LoginViewModel() { UserEmailId = (Request.Cookies["RememberMe_UserEmailId"] != null ? Request.Cookies["RememberMe_UserEmailId"].Value : ""), Password = (Request.Cookies["RememberMe_Password"] != null ? Request.Cookies["RememberMe_Password"].Value : ""), RememberMe = string.IsNullOrEmpty((Request.Cookies["RememberMe_UserEmailId"] != null ? Request.Cookies["RememberMe_UserEmailId"].Value : "")) ? false : true });}
+    </div>
+    <!--End Popup/Modal-->
+    
+    <!--script-->
+
+    <script src="/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/function.js"></script>
+    <script src="~/Scripts/CustomFunction.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/sweetalert-dev.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/datepicker.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

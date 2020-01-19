@@ -771,6 +771,8 @@
     <Content Include="Views\Home\Wishlist.cshtml" />
     <Content Include="Views\Shared\_CommonLayout.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Shared\_FrontLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
